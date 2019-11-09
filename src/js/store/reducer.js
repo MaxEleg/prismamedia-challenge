@@ -5,5 +5,5 @@ const defaultState = {
 };
 
 export function reducer(state = defaultState) {
-
+  return state;
 }
