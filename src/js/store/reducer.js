@@ -1,7 +1,8 @@
 
 const defaultState = {
   movies:[],
-  filteredMovies: []
+  filteredMovies: [],
+  bestMovies: []
 };
 
 export function reducer(state = defaultState) {

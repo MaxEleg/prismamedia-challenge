@@ -1,5 +1,4 @@
 import React from 'react';
-import {Navbar} from "../Navbar";
 import './styles.css';
 
 class Header extends React.Component{
@@ -9,7 +8,7 @@ class Header extends React.Component{
   render(){
     return <div className="app-header">
       <img src={"/images/fonds/header-bg.png"} className={"header-bg"} />
-      <Navbar/>
+      {this.props.children}
     </div>
   }
 }

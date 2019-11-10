@@ -1,7 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {Header} from "../Header";
+
+import {Header} from "./Header";
+import {Navbar} from "../Navbar";
+import {BestMovies} from "./BestMovies";
 
 class HomeComponent extends React.Component{
   constructor(props){
@@ -10,7 +13,10 @@ class HomeComponent extends React.Component{
 
   render(){
     return <div>
-      <Header/>
+      <Header>
+        <Navbar/>
+        <BestMovies />
+      </Header>
     </div>
   }
 }
