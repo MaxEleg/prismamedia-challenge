@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import {Header} from "../Header";
 
 class HomeComponent extends React.Component{
   constructor(props){
@@ -9,8 +10,7 @@ class HomeComponent extends React.Component{
 
   render(){
     return <div>
-      HOME
-      {JSON.stringify(this.props)}
+      <Header/>
     </div>
   }
 }
