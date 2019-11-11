@@ -18,20 +18,31 @@ class OptionPicker extends React.Component{
   render(){
     const {size, leftArrow, options} = this.props;
     const {expand} = this.state;
-    let btnClass = "btn-picker " + size;
+    let btnClass = "btn-picker ";
     const selectedOption = options.filter(item=>item.selected)[0];
     return <button
       className={btnClass}
       onFocus={()=>this.expand(true)}
       onBlur={()=>this.expand(false)}
-    >
-      {selectedOption.title}
+      /*onClick={()=>this.expand(!this.state.expand)}*/>
+      <div className={size} >
+        {selectedOption.title}
+      </div>
       {leftArrow ? <img
         className="left-arrow"
         src={"/images/icons/dropdownarrow.svg"}
       /> : null}
 
-      {expand ? <h1>EXPANDED</h1> : null}
+      {expand ? <div className={"options-container"}>
+        {options.map((item,i)=><div
+          key={i}
+          className={"option-selectable"}
+          onClick={()=>{
+            this.props.onSelected(item,i)
+          }}>
+          {item.title}
+        </div>)}
+      </div> : null}
 
     </button>
   }

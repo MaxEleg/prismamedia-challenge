@@ -36,7 +36,7 @@ class MoviesFilterComponent extends React.Component{
   }
 
   optionSelected(option, i){
-
+    console.log(option, i)
   }
 
   render(){
@@ -44,7 +44,7 @@ class MoviesFilterComponent extends React.Component{
       <div className={"container"}>
         <h4>Tous les films</h4>
         <div>
-          Trier par :
+          <span>Trier par :</span>
           <Picker
             type={"option"}
             size={'sm'}
