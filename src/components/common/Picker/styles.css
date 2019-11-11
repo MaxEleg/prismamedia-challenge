@@ -1,0 +1,26 @@
+.btn-picker{
+    background-color: #0D1D38;
+    color: #586E94;
+    font-size: 17px;
+    border-radius: 14px;
+    border: 1px solid #586E94;
+    position: relative;
+}
+
+.btn-picker:focus, .btn-picker:hover{
+    outline: none;
+    background-color: #253755;
+}
+
+.btn-picker.sm{
+    padding: 8px 44px 8px 0;
+    min-width: 137px;
+}
+
+.btn-picker > .left-arrow{
+    width: 14px;
+    position: absolute;
+    right: 11px;
+    top: 50%;
+    transform: translateY(-50%);
+}
