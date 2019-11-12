@@ -5,6 +5,7 @@ import {bindActionCreators} from 'redux';
 import './styles.css'
 import MoviesPagination from "./MoviesPagination";
 import {FilterController} from "../../../js/controllers/filters";
+import {copy} from "../../../js/utils";
 
 const MovieItem = (props)=><div
   className={"movie col-sm-6 col-lg-3"}
@@ -29,7 +30,7 @@ class MoviesListComponent extends React.Component{
   filters(array){
     const {filters} = this.props;
     const {sortBy,year,gender} = filters;
-
+    array = copy(array);
     FilterController.sortByFilter(sortBy, array);
     array = FilterController.filterByGender(gender, array);
     array = FilterController.filterByYear(year, array);
