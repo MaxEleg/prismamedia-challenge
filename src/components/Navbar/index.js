@@ -8,7 +8,7 @@ import {MoviesController} from "../../js/controllers/movies/MoviesController";
 class Navbar extends React.Component{
   constructor(props){
     super(props);
-    this.state = {search: ''}
+    this.state = {search: '', focus: false}
   }
 
   fetchMovies(){
@@ -46,11 +46,17 @@ class Navbar extends React.Component{
             <input
               type={"text"}
               onChange={(e)=>this.setState({search: e.target.value})}
-              onBlur={()=>this.fetchMovies()}
+              onBlur={()=>{this.setState({focus: false}); this.fetchMovies()}}
+              onFocus={()=>{this.setState({focus: true})}}
               value={this.state.search}
               className={"search-input"}
               placeholder={"Rechercher un film"}
             />
+            {this.state.focus ?
+              <button style={{ margin: '5px'}} className={"btn btn-success"}>
+                Rechercher
+              </button> :
+              null}
           </div>
         </div>
       </div>
