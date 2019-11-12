@@ -7,7 +7,8 @@ function formatMovies(movies){ // cette fonction va reformatter notre tableau
     return {
       title: movie.title,
       date: movie.release_date ? movie.release_date.split('-')[0] : '-',
-      img: "https://image.tmdb.org/t/p/w300" + movie.poster_path
+      img: "https://image.tmdb.org/t/p/w300" + movie.poster_path,
+      genre_ids: movie.genre_ids
     }
   });
 }

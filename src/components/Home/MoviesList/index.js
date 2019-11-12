@@ -26,6 +26,7 @@ class MoviesListComponent extends React.Component{
     const {movies} = this.props;
 
     return <div className={"movies-list"}>
+      {JSON.stringify(this.props.filters)}
       <div className={"container"}>
         <div className={"row"}>
             {movies.map((movie,i)=><MovieItem key={i}{...movie}/>)}
@@ -39,6 +40,7 @@ class MoviesListComponent extends React.Component{
 
 const mapStateToProps = function (state){
   return {
+    filters: state.filters,
     movies: state.movies,
     lastFetchMode: state.lastFetchMode,
     lastQuery: state.lastQuery,
