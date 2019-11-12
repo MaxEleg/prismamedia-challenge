@@ -3,7 +3,10 @@ import {copy} from "../utils";
 
 const defaultState = {
   movies:[],
-  nbPages: 0,
+  totalPages: 0,
+  page: 0,
+  lastFetchMode: 'popular',
+  lastQuery: '',
   bestMovies: []
 };
 
@@ -14,9 +17,10 @@ export function reducer(state = defaultState, action) {
       newState.bestMovies = action.payload;
       return newState;
     case SET_MOVIES:
-
       newState.movies = action.payload.movies;
       newState.page = action.payload.page;
+      newState.lastFetchMode = action.payload.lastFetchMode; // on enrigistre le dernier type de recherche
+      newState.lastQuery = action.payload.lastQuery; // on enregistre la derniere query
       newState.totalPages = action.payload.totalPages;
       return newState;
     default:

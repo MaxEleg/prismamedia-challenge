@@ -10,3 +10,46 @@
     width: 200px;
     border-radius: 17px;
 }
+
+.movies-pagination{
+    margin-top: 15px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.pagination-btn{
+    width: 48px;
+    height: 48px;
+    background-color: #253755;
+    border: 2px solid #586E94;
+    border-radius: 17px;
+    color: white;
+    outline: none;
+}
+
+.chevron-pagination{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 20;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid #586E94;
+}
+
+.chevron-pagination.left {
+    left: 5px;
+    background-image: url(/images/icons/paginationpreviousarrow.svg);
+}
+
+.chevron-pagination.right {
+    right: 5px;
+    background-image: url(/images/icons/paginationnextarrow.svg);
+}
+
+@media (max-width: 500px) {
+    .chevron-pagination{
+        display: none;
+    }
+}

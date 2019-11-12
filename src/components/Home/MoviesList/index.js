@@ -4,6 +4,7 @@ import {bindActionCreators} from 'redux';
 import objectPath from 'object-path';
 
 import './styles.css'
+import MoviesPagination from "./MoviesPagination";
 
 const MovieItem = (props)=><div className={"movie col-sm-6 col-lg-3"}>
   <img className={"movie-img"} src={props.img} />
@@ -30,6 +31,7 @@ class MoviesListComponent extends React.Component{
             {movies.map((movie,i)=><MovieItem key={i}{...movie}/>)}
         </div>
       </div>
+      <MoviesPagination {...this.props}/>
     </div>
   }
 }
@@ -38,6 +40,10 @@ class MoviesListComponent extends React.Component{
 const mapStateToProps = function (state){
   return {
     movies: state.movies,
+    lastFetchMode: state.lastFetchMode,
+    lastQuery: state.lastQuery,
+    totalPages: state.totalPages,
+    page: state.page,
   }
 };
 

@@ -38,6 +38,8 @@ class MoviesController{
         payload: {
           movies: movies,
           page: data.page,
+          lastFetchMode: data.query ? 'search' : 'popular',
+          lastQuery: data.query,
           totalPages: total_pages
         }
       });
@@ -49,7 +51,7 @@ class MoviesController{
   static async fetchPopularMovies(page = 1){
     await MoviesController.fetchMovies({
       query: null,
-      page,
+      page: page,
       route: 'movie/popular/'
     });
   }

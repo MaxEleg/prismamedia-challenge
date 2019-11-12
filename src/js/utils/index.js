@@ -15,3 +15,11 @@ export function chunkArray(myArray, chunk_size){
 
   return tempArray;
 };
+
+export function getDiffNumber(start, end){ // cette fonction retourne tous les nombres entre une intervalle
+  const diff = [];
+  for(let i = start; i <= end; i++){
+    diff.push(i);
+  }
+  return diff;
+}
