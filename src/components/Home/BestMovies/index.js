@@ -46,7 +46,6 @@ class BestMoviesComponent extends React.Component{
   }
   render(){
     const {bestMovies} = this.props;
-
     let options = this.state.options;
 
     return <div className={"best-movies-container"}>
@@ -56,9 +55,9 @@ class BestMoviesComponent extends React.Component{
       }}>
         <h4>Les 10 meilleurs films</h4>
         <div className={"best-movies-carousel"}>
-          <OwlCarousel ref={this.carousel} {...options}>
+          {bestMovies.length ? <OwlCarousel ref={this.carousel} {...options}>
             {bestMovies.map((movie,i)=><BestMovie key={i}{...movie}/>)}
-          </OwlCarousel>
+          </OwlCarousel> : null}
           <div onClick={()=>this.slide('prev')} className={"chevron-carousel left"}/>
           <div onClick={()=>this.slide('next')}  className={"chevron-carousel right"}/>
         </div>

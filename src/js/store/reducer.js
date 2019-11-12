@@ -1,34 +1,19 @@
+import {SET_TOP_RATED_MOVIES} from "./types";
+import {copy} from "../utils";
 
 const defaultState = {
   movies:[],
   filteredMovies: [],
-  bestMovies: [{
-    title: 'Intestellar 1',
-    date: '2014',
-    img: 'http://fr.web.img6.acsta.net/pictures/14/09/24/12/08/158828.jpg'
-  },{
-    title: 'Intestellar 2',
-    date: '2014',
-    img: 'http://fr.web.img6.acsta.net/pictures/14/09/24/12/08/158828.jpg'
-  },{
-    title: 'Intestellar 3',
-    date: '2014',
-    img: 'http://fr.web.img6.acsta.net/pictures/14/09/24/12/08/158828.jpg'
-  },{
-    title: 'Intestellar 4',
-    date: '2014',
-    img: 'http://fr.web.img6.acsta.net/pictures/14/09/24/12/08/158828.jpg'
-  },{
-    title: 'Intestellar 5',
-    date: '2014',
-    img: 'http://fr.web.img6.acsta.net/pictures/14/09/24/12/08/158828.jpg'
-  },{
-    title: 'Intestellar 6',
-    date: '2014',
-    img: 'http://fr.web.img6.acsta.net/pictures/14/09/24/12/08/158828.jpg'
-  }]
+  bestMovies: []
 };
 
-export function reducer(state = defaultState) {
-  return state;
+export function reducer(state = defaultState, action) {
+  let newState = copy(state);
+  switch (action.type){
+    case SET_TOP_RATED_MOVIES:
+      newState.bestMovies = action.payload;
+      return newState;
+    default:
+      return state;
+  }
 }
