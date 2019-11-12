@@ -1,12 +1,16 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import objectPath from 'object-path';
 
 import './styles.css'
 import MoviesPagination from "./MoviesPagination";
+import {FilterController} from "../../../js/controllers/filters";
 
-const MovieItem = (props)=><div className={"movie col-sm-6 col-lg-3"}>
+const MovieItem = (props)=><div
+  className={"movie col-sm-6 col-lg-3"}
+  style={{
+    opacity: props.disabled ? 0.25 : 1
+  }}>
   <img className={"movie-img"} src={props.img} />
   <div className="best-movie-title">
     {props.title}
@@ -22,14 +26,24 @@ class MoviesListComponent extends React.Component{
     this.state = {};
   }
 
+  filters(array){
+    const {filters} = this.props;
+    const {sortBy,year,gender} = filters;
+
+    FilterController.sortByFilter(sortBy, array);
+    array = FilterController.filterByGender(gender, array);
+    array = FilterController.filterByYear(year, array);
+
+    return array;
+  }
+
   render(){
     const {movies} = this.props;
 
     return <div className={"movies-list"}>
-      {JSON.stringify(this.props.filters)}
       <div className={"container"}>
         <div className={"row"}>
-            {movies.map((movie,i)=><MovieItem key={i}{...movie}/>)}
+          {movies ? this.filters(movies).map((movie,i)=><MovieItem key={i}{...movie}/>) : null}
         </div>
       </div>
       <MoviesPagination {...this.props}/>
