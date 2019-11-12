@@ -11,6 +11,7 @@ class App extends React.Component{
 
   async componentWillMount(){
     await MoviesController.fetchTopRated();
+    await MoviesController.fetchPopularMovies();
   }
 
   render(){

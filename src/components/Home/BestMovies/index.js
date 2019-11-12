@@ -40,7 +40,8 @@ class BestMoviesComponent extends React.Component{
     const elem = objectPath.get(this, 'carousel.current.$ele'); // on récupère l'element
 
     if(!elem){ // si il n'existe pas
-      throw new Error('Component Carousel not initialized'); // on lance une erreur
+      console.error('Component Carousel not initialized'); // on lance une erreur
+      return;
     }
     elem.trigger(direction + '.owl.carousel', [500]); // on change la direction
   }

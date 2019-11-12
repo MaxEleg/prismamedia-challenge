@@ -6,6 +6,7 @@ import {Header} from "./Header";
 import {Navbar} from "../Navbar";
 import {BestMovies} from "./BestMovies";
 import {MoviesFilter} from "./MoviesFilter";
+import {MoviesList} from "./MoviesList";
 
 class HomeComponent extends React.Component{
   constructor(props){
@@ -19,6 +20,7 @@ class HomeComponent extends React.Component{
         <BestMovies />
         <MoviesFilter />
       </Header>
+      <MoviesList />
     </div>
   }
 }

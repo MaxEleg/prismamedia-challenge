@@ -1,0 +1,12 @@
+.movies-list{
+    padding: 17px 0px;
+}
+
+.movie{
+    margin-bottom: 16px;
+}
+
+.movie-img{
+    width: 200px;
+    border-radius: 17px;
+}
