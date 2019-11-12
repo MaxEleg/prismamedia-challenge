@@ -1,0 +1,132 @@
+.btn-picker{
+    background-color: #0D1D38;
+    color: #586E94;
+    font-size: 17px;
+    border-radius: 10px;
+    height: 43px;
+    border: 1px solid #586E94;
+    position: absolute;
+    padding: 0;
+    top: -7px;
+    margin-left: 21px;
+}
+
+.btn-picker:focus, .btn-picker:hover{
+    outline: none;
+    background-color: #253755;
+}
+
+/***** STYLE OPTION PICKER *****/
+
+.sm{
+    padding: 8px 44px 8px 0;
+    min-width: 137px;
+}
+
+.lg{
+    padding: 8px 24px;
+    min-width: 237px;
+    text-align: left;
+}
+
+.btn-picker > .left-arrow{
+    width: 14px;
+    position: absolute;
+    right: 11px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.options-container{
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    bottom: 6px;
+    margin-left: -1px;
+    margin-right: -1px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #586E94;
+
+}
+
+.option-selectable{
+    background-color: #253755;
+    width: 100%;
+    padding: 7px;
+    border-top: 1px solid #586E94;
+    border-bottom: 1px solid #586E94;
+}
+
+/***** END STYLE OPTION PICKER *****/
+
+/***** STYLE DATE PICKER *****/
+
+.date-container{
+    width: 239px;
+    height: 115px;
+    position: absolute;
+    z-index: 9;
+    bottom: -66px;
+    border-radius: 10px;
+    overflow: visible;
+    border: none;
+    top: 58px;
+    background-color: #253755;
+}
+
+.bubble-date{
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: -5px;
+    left: 19px;
+    z-index: -1;
+    transform: rotate(45deg);
+    background-color: #253755;
+
+}
+
+.top-date{
+    padding: 6px 0 4px 0;
+    text-align: center;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    position :relative;
+}
+
+.arrow-year{
+    position: absolute;
+    cursor: pointer;
+    width: 8px;
+    top: 12px;
+}
+
+.arrow-year.prev{
+    left: 16px;
+}
+
+.arrow-year.next{
+    right: 16px;
+}
+
+.body-date{
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.year-selection{
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+}
+
+.date-line{
+    padding-left: 7px;
+}
+/***** END STYLE DATE PICKER *****/

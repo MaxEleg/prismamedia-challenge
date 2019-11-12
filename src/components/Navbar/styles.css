@@ -1,0 +1,15 @@
+.search-input{
+    color: #586E94;
+    border-radius: 15px;
+    width: 257px;
+    height: 48px;
+    border: none;
+    padding: 8px 40px 8px 15px;
+    background: url(/images/icons/searchicon.svg) #253755 219px 15px no-repeat;
+
+}
+
+
+.search-input:focus{
+    outline: none;
+}

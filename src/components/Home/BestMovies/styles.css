@@ -1,0 +1,54 @@
+.best-movies-container{
+    padding: 35px 0px;
+}
+
+.best-movies-carousel{
+    margin-top: 34px;
+    position: relative;
+}
+
+.best-movie{
+    width: 138px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.best-movie-img{
+    border-radius: 7px;
+}
+
+.best-movie-title{
+    font-weight: 500;
+    font-size: 19px;
+}
+
+.best-movie-date{
+    color: #586E94;
+}
+
+.chevron-carousel{
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    top: 50%;
+    border-radius: 70px;
+    transform: translateY(-50%);
+    background-color: rgba(37, 55, 85, 0.7);
+    cursor: pointer;
+    z-index: 20;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.chevron-carousel.left{
+    left: -8px;
+    background-image: url("/images/icons/carousel-left.svg");
+}
+.chevron-carousel.right{
+    right: -8px;
+    background-image: url("/images/icons/carousel-right.svg");
+}
+
+.owl-dots{
+    display: none;
+}
