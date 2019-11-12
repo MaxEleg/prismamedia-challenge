@@ -6,7 +6,7 @@ function formatMovies(movies){ // cette fonction va reformatter notre tableau
   return movies.map(movie=>{
     return {
       title: movie.title,
-      date: movie.release_date.split('-')[0],
+      date: movie.release_date ? movie.release_date.split('-')[0] : '-',
       img: "https://image.tmdb.org/t/p/w300" + movie.poster_path
     }
   });
@@ -24,6 +24,7 @@ class MoviesController{
       });
     } catch (ex){
       alert("Une erreur s'est produite, merci de vérifier votre clé API");
+      console.error(ex);
     }
   }
   static async fetchMovies(data){ // on fetch les meilleurs films
@@ -45,6 +46,7 @@ class MoviesController{
       });
     } catch (ex){
       alert("Une erreur s'est produite, merci de vérifier votre clé API");
+      console.error(ex);
     }
   }
 
